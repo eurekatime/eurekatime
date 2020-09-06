@@ -759,7 +759,14 @@ a {
   margin: 4px 8px;
 }
 
+      .sidebar {
+        width: 100%;
+      }
+      .main-container {
+        margin-left: 100%;
+      }
+    
       body {
-        background: #868e96;
+        background: #f1f3f5;
       }
     
