@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://Maxwelltoo.github.io</id>
+    <id>https://eurekatime.cn</id>
     <title>Eureka Time</title>
-    <updated>2020-09-06T15:10:03.889Z</updated>
+    <updated>2020-09-07T09:41:16.450Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://Maxwelltoo.github.io"/>
-    <link rel="self" href="https://Maxwelltoo.github.io/atom.xml"/>
+    <link rel="alternate" href="https://eurekatime.cn"/>
+    <link rel="self" href="https://eurekatime.cn/atom.xml"/>
     <subtitle>Nothing is so common as the wish to be remarkable</subtitle>
-    <logo>https://Maxwelltoo.github.io/images/avatar.png</logo>
-    <icon>https://Maxwelltoo.github.io/favicon.ico</icon>
+    <logo>https://eurekatime.cn/images/avatar.png</logo>
+    <icon>https://eurekatime.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, Eureka Time</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://Maxwelltoo.github.io/post/hello-gridea/</id>
-        <link href="https://Maxwelltoo.github.io/post/hello-gridea/">
+        <id>https://eurekatime.cn/post/hello-gridea/</id>
+        <link href="https://eurekatime.cn/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
