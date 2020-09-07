@@ -1,31 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://eurekatimex.vercel.app/</id>
-    <title>Eureka Time</title>
-    <updated>2020-09-07T19:10:42.920Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://eurekatimex.vercel.app/"/>
-    <link rel="self" href="https://eurekatimex.vercel.app/atom.xml"/>
-    <subtitle>Nothing is so common as the wish to be remarkable</subtitle>
-    <logo>https://eurekatimex.vercel.app/images/avatar.png</logo>
-    <icon>https://eurekatimex.vercel.app/favicon.ico</icon>
-    <rights>All rights reserved 2020, Eureka Time</rights>
-    <entry>
-        <title type="html"><![CDATA[FPGA任意波形信号发生器]]></title>
-        <id>https://eurekatimex.vercel.app/post/fpga-ren-yi-bo-xing-xin-hao-fa-sheng-qi/</id>
-        <link href="https://eurekatimex.vercel.app/post/fpga-ren-yi-bo-xing-xin-hao-fa-sheng-qi/">
-        </link>
-        <updated>2020-09-07T13:10:58.000Z</updated>
-        <content type="html"><![CDATA[<p>硬件</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DDS原理与Xilinx IP核使用]]></title>
-        <id>https://eurekatimex.vercel.app/post/DDS_Xilinx/</id>
-        <link href="https://eurekatimex.vercel.app/post/DDS_Xilinx/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="一-dds原理">一. DDS原理</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>DDS原理与Xilinx IP核使用 | Eureka Time</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://eurekatimex.vercel.app//favicon.ico?v=1599505838665">
+<link rel="stylesheet" href="https://eurekatimex.vercel.app//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一. DDS原理
+DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生相位、频率可控的任意波形。
+由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形的..." />
+    <meta name="keywords" content="FPGA,ZYNQ,Xilinx" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://eurekatimex.vercel.app/">
+        <img src="https://eurekatimex.vercel.app//images/avatar.png?v=1599505838665" class="site-logo">
+        <h1 class="site-title">Eureka Time</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Nothing is so common as the wish to be remarkable
+    </div>
+    <div class="site-footer">
+      Github主页 <a href="https://github.com/eurekatime" target="_blank">eurekatime</a> | <a class="rss" href="https://eurekatimex.vercel.app//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">DDS原理与Xilinx IP核使用</h2>
+            <div class="post-date">2018-12-12</div>
+            
+              <div class="feature-container" style="background-image: url('https://eurekatimex.vercel.app//post-images/DDS_Xilinx.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="一-dds原理">一. DDS原理</h2>
 <p>DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生相位、频率可控的任意波形。</p>
 <p>由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形的关键就在于正弦信号的合成。</p>
 <p>DDS产生正弦信号的方法非常简单：我们把正弦波整个周期内每个相位及其对应的振幅数据都记录在存储器（ROM）里，让相位在时钟信号作用下循环累加，并根据相位信息读取存储器里对应的振幅值，将其输出即可得到正弦信号。记录了正弦波数据的ROM即为正弦查找表（Look-up Table），而实现相位累加的则为相位累加器（Phase accumulator）。</p>
@@ -44,6 +118,53 @@
 <p>frequency resolution 频率分辨率</p>
 <p>phase offset 相位偏移</p>
 <p>phase increment 相位增量</p>
-]]></content>
-    </entry>
-</feed>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://eurekatimex.vercel.app/tag/HP97w7mxZ/" class="tag">
+                    FPGA
+                  </a>
+                
+                  <a href="https://eurekatimex.vercel.app/tag/uak2MdU9K/" class="tag">
+                    ZYNQ
+                  </a>
+                
+                  <a href="https://eurekatimex.vercel.app/tag/uC5Ys7aVa/" class="tag">
+                    Xilinx
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
