@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://eurekatime.cn</id>
+    <id>https://eurekatimex.vercel.app/</id>
     <title>Eureka Time</title>
-    <updated>2020-09-07T10:07:21.926Z</updated>
+    <updated>2020-09-07T10:09:09.126Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://eurekatime.cn"/>
-    <link rel="self" href="https://eurekatime.cn/atom.xml"/>
+    <link rel="alternate" href="https://eurekatimex.vercel.app/"/>
+    <link rel="self" href="https://eurekatimex.vercel.app/atom.xml"/>
     <subtitle>Nothing is so common as the wish to be remarkable</subtitle>
-    <logo>https://eurekatime.cn/images/avatar.png</logo>
-    <icon>https://eurekatime.cn/favicon.ico</icon>
+    <logo>https://eurekatimex.vercel.app/images/avatar.png</logo>
+    <icon>https://eurekatimex.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2020, Eureka Time</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://eurekatime.cn/post/hello-gridea/</id>
-        <link href="https://eurekatime.cn/post/hello-gridea/">
+        <id>https://eurekatimex.vercel.app/post/hello-gridea/</id>
+        <link href="https://eurekatimex.vercel.app/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>

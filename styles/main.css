@@ -760,10 +760,10 @@ a {
 }
 
       .sidebar {
-        width: 100%;
+        width: 25%;
       }
       .main-container {
-        margin-left: 100%;
+        margin-left: 25%;
       }
     
       body {
