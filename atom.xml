@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eurekatimex.vercel.app/</id>
     <title>Eureka Time</title>
-    <updated>2020-09-08T04:42:33.429Z</updated>
+    <updated>2020-09-08T05:36:36.409Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eurekatimex.vercel.app/"/>
     <link rel="self" href="https://eurekatimex.vercel.app/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://eurekatimex.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2020, Eureka Time</rights>
     <entry>
-        <title type="html"><![CDATA[FPGA任意波形信号发生器]]></title>
+        <title type="html"><![CDATA[FPGA任意波形信号发生器（待更新）]]></title>
         <id>https://eurekatimex.vercel.app/post/fpga-ren-yi-bo-xing-xin-hao-fa-sheng-qi/</id>
         <link href="https://eurekatimex.vercel.app/post/fpga-ren-yi-bo-xing-xin-hao-fa-sheng-qi/">
         </link>
