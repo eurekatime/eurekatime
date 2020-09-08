@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://eurekatimex.vercel.app//favicon.ico?v=1599505944613">
+<link rel="shortcut icon" href="https://eurekatimex.vercel.app//favicon.ico?v=1599540033584">
 <link rel="stylesheet" href="https://eurekatimex.vercel.app//styles/main.css">
 
 
@@ -19,8 +19,7 @@
 
 
     <meta name="description" content="一. DDS原理
-DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生相位、频率可控的任意波形。
-由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形的..." />
+DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生可以调节相位、频率的任意波形。由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形..." />
     <meta name="keywords" content="FPGA,ZYNQ,Xilinx" />
   </head>
   <body>
@@ -30,7 +29,7 @@ DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://eurekatimex.vercel.app/">
-        <img src="https://eurekatimex.vercel.app//images/avatar.png?v=1599505944613" class="site-logo">
+        <img src="https://eurekatimex.vercel.app//images/avatar.png?v=1599540033584" class="site-logo">
         <h1 class="site-title">Eureka Time</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -100,11 +99,10 @@ DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计
             
             <div class="post-content" v-pre>
               <h2 id="一-dds原理">一. DDS原理</h2>
-<p>DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生相位、频率可控的任意波形。</p>
-<p>由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形的关键就在于正弦信号的合成。</p>
+<p>DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生可以调节相位、频率的任意波形。由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形的关键就在于正弦信号的合成。</p>
 <p>DDS产生正弦信号的方法非常简单：我们把正弦波整个周期内每个相位及其对应的振幅数据都记录在存储器（ROM）里，让相位在时钟信号作用下循环累加，并根据相位信息读取存储器里对应的振幅值，将其输出即可得到正弦信号。记录了正弦波数据的ROM即为正弦查找表（Look-up Table），而实现相位累加的则为相位累加器（Phase accumulator）。</p>
 <p>为了控制正弦波的相位，我们使用一个相位控制字与相位累加器的输出相加，使得最终输出的相位发生偏移，改变相位控制字的值，即可改变输出波形的相位偏移量。控制正弦波的频率则是用一个频率控制字控制相位累加器的累加步长来实现，改变频率控制字的值，即可改变每个时钟周期的相位增量，从而改变完成一次相位循环所需的时间，输出波形的频率也就由此改变。</p>
-<figure data-type="image" tabindex="1"><img src="https://eurekatimex.vercel.app//post-images/1599505929843.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://eurekatimex.vercel.app//post-images/1599539908064.png" alt="" loading="lazy"></figure>
 <p>可以看到，相比于计算机常用的三角函数计算方法（泰勒级数展开等），DDS使用的查找表方法不需要任何的多项式运算、浮点运算，因此可以更加简单、快速地在FPGA这样的缺乏浮点运算单元的纯硬件上实现，最后通过DAC输出所需的模拟正弦信号。</p>
 <h2 id="二-dds参数说明">二. DDS参数说明</h2>
 <p>系统时钟频率<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mrow><mi>c</mi><mi>l</mi><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{clk}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>     相位累加器数据位宽B</p>
