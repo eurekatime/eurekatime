@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://eurekatimex.vercel.app//favicon.ico?v=1599543393581">
+<link rel="shortcut icon" href="https://eurekatimex.vercel.app//favicon.ico?v=1603168720616">
 <link rel="stylesheet" href="https://eurekatimex.vercel.app//styles/main.css">
 
 
@@ -18,8 +18,9 @@
 
 
 
-    <meta name="description" content="一. DDS原理
-DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生可以调节相位、频率的任意波形。由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形..." />
+    <meta name="description" content="
+一. DDS原理
+DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生可以调节相位、频率的任意波形。由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波..." />
     <meta name="keywords" content="FPGA,ZYNQ,Xilinx" />
   </head>
   <body>
@@ -29,7 +30,7 @@ DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://eurekatimex.vercel.app/">
-        <img src="https://eurekatimex.vercel.app//images/avatar.png?v=1599543393581" class="site-logo">
+        <img src="https://eurekatimex.vercel.app//images/avatar.png?v=1603168720616" class="site-logo">
         <h1 class="site-title">Eureka Time</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -92,13 +93,14 @@ DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
             <h2 class="post-title">DDS原理与Xilinx IP核使用</h2>
-            <div class="post-date">2018-12-12</div>
+            <div class="post-date">2020-09-07</div>
             
               <div class="feature-container" style="background-image: url('https://eurekatimex.vercel.app//post-images/DDS_Xilinx.png')">
               </div>
             
             <div class="post-content" v-pre>
-              <h2 id="一-dds原理">一. DDS原理</h2>
+              <!-- more -->
+<h2 id="一-dds原理">一. DDS原理</h2>
 <p>DDS即直接数字式频率合成器（Direct Digital Synthesizer），其设计目的是为了产生可以调节相位、频率的任意波形。由于任何周期信号都可以分解为一系列正弦信号之和（即傅里叶变换的定义），因此产生任意波形的关键就在于正弦信号的合成。</p>
 <p>DDS产生正弦信号的方法非常简单：我们把正弦波整个周期内每个相位及其对应的振幅数据都记录在存储器（ROM）里，让相位在时钟信号作用下循环累加，并根据相位信息读取存储器里对应的振幅值，将其输出即可得到正弦信号。记录了正弦波数据的ROM即为正弦查找表（Look-up Table），而实现相位累加的则为相位累加器（Phase accumulator）。</p>
 <p>为了控制正弦波的相位，我们使用一个相位控制字与相位累加器的输出相加，使得最终输出的相位发生偏移，改变相位控制字的值，即可改变输出波形的相位偏移量。控制正弦波的频率则是用一个频率控制字控制相位累加器的累加步长来实现，改变频率控制字的值，即可改变每个时钟周期的相位增量，从而改变完成一次相位循环所需的时间，输出波形的频率也就由此改变。</p>
